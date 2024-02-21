@@ -1,0 +1,39 @@
+# Service Principal create and assign role
+
+# single sp creation
+az ad sp create-for-rbac --names api://serviceprincipal1 --role reader --scopes /subscriptions/078e9c41-2dbf-4e9f-b4be-6ea910e9e74a
+
+# Multiple sp creation
+for i in {1..5}; do az ad sp create-for-rbac --name "api://serviceprincipal-$i" --role contributor --scopes /subscriptions/078e9c41-2dbf-4e9f-b4be-6ea910e9e74a --sdk-auth; done
+
+# Multiple sp create and get details in the output json file
+for i in {7,8}; do az ad sp create-for-rbac --name "api://serviceprincipal-$i"\
+ --role contributor --scopes /subscriptions/078e9c41-2dbf-4e9f-b4be-6ea910e9e74a \
+ --sdk-auth >> serviceprincipal.json; done
+
+
+# app name and data will store the output json
+for i in {9,10}; do output_json=$(az ad sp create-for-rbac --name "api://serviceprincipal-$i" \
+    --role contributor --scopes /subscriptions/078e9c41-2dbf-4e9f-b4be-6ea910e9e74a --sdk-auth) \
+    echo "{\"name\": \"serviceprincipal$i\", \"data\": $output_json}" >> serviceprincipal.json; done
+
+# Service Principal delete
+az ad sp delete --id < sp id >
+
+
+
+
+"clientId": 
+  "clientSecret": 
+  "subscriptionId": 
+  "tenantId": 
+  "activeDirectoryEndpointUrl": 
+  "resourceManagerEndpointUrl": 
+  "activeDirectoryGraphResourceId": 
+  "sqlManagementEndpointUrl": 
+  "galleryEndpointUrl": 
+  "managementEndpointUrl": 
+
+  for i in {9,10}; do output_json=$(az ad sp create-for-rbac --name "api://serviceprincipal-$i" \
+    --role contributor --scopes /subscriptions/078e9c41-2dbf-4e9f-b4be-6ea910e9e74a --sdk-auth) \
+    >> serviceprincipal.json; done

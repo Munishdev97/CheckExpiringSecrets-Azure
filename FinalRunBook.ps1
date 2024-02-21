@@ -28,10 +28,10 @@ $daysUntilDate = (New-TimeSpan -Start $currentDate -End $dateToCheck).Days
 
 if ($daysUntilDate -lt $daysToChekAgainst) {
     Write-Output "Days left:  $daysUntilDate "
- Write-Output "  Type: Password"
-        Write-Output "  Value: $($passwordCredential.value)"
-        Write-Output "  End date time: $($passwordCredential.endDateTime)"
-  Write-Output "  Key ID: $($passwordCredential.keyId)"
+    Write-Output "  Type: Password"
+    Write-Output "  Value: $($passwordCredential.value)"
+    Write-Output "  End date time: $($passwordCredential.endDateTime)"
+    Write-Output "  Key ID: $($passwordCredential.keyId)"
 
   $userId = "Dipesh@cqons.onMicrosoft.com"
 

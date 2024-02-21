@@ -61,12 +61,9 @@ if ($daysUntilDate -lt 14) {
         Write-Output "  Value: $($passwordCredential.value)"
         Write-Output "  End date time: $($passwordCredential.endDateTime)"
   Write-Output "  Key ID: $($passwordCredential.keyId)"
-}
-          
-    
+    }
   }
 }
-
 
   $userId = "xx@cqons.onMicrosoft.com"
 
@@ -78,14 +75,11 @@ $message = @{
         contentType = "Text"
         content = "This is a test email sent using the Microsoft Graph API"
     }
-}
+  }
 
 # Send the email
-Send-MgUserMail -UserId $userId -Message $message 
-
-
-      
-    }
+Send-MgUserMail -UserId $userId -Message $message      
+}
     
     
 

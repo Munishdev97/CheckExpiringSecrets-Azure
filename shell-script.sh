@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Set your Azure AD tenant ID
 TENANT_ID="a78ecd89-2a60-45a6-890c-803ffeae2338"
 

@@ -47,11 +47,6 @@ $message = @{
 
 # Send the email
 Send-MgUserMail -UserId $userId -Message $message 
+        } 
+    }     
 }
-          
-    
-  
-}
-
-      
-    }

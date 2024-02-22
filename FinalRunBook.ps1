@@ -33,12 +33,12 @@ if ($daysUntilDate -lt $daysToChekAgainst) {
     Write-Output "  End date time: $($passwordCredential.endDateTime)"
     Write-Output "  Key ID: $($passwordCredential.keyId)"
 
-  $userId = "Dipesh@cqons.onMicrosoft.com"
+  $userId = "harman.a.m@mercedes-benz.com"
 
-# Prepare the message object
+# Prepare the message object 
 $message = @{
     subject = "Client secret is about to expire for $($application.displayName)"
-    toRecipients = @(@{emailAddress = @{address = "Dipesh@cqons.onMicrosoft.com"}})
+    toRecipients = @(@{emailAddress = @{address = "harman.a.m@mercedes-benz.com"}})
     body = @{
         contentType = "Text"
         content = "Hi Team, One of the client secret is going to expire from Azure app Name   $($application.displayName) registrationDetails   :ExpirationDate   $($passwordCredential.endDateTime) Location : https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Overview/appId/$($application.id)"
